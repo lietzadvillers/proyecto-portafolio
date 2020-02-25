@@ -1,3 +1,4 @@
+/* font: Neue Haas Grotesk */
 @font-face {
     font-family: "neueregular";
     src: url("assets/fonts/NeueHaasGrotesk-Regular.woff") format ("woff");
@@ -154,3 +155,4 @@ html {
   .lietzadevillers {
 border: 2px solid pink;
   }
+
