@@ -1,214 +1,128 @@
-/* font: Neue Haas Grotesk */
+/* Tipografía */
 @font-face {
     font-family: "neueregular";
     src: url("assets/fonts/NeueHaasGrotesk-Regular.woff") format ("woff");
-    font-weight: normal; 
+    font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: "neuebold";
     src: url("assets/fonts/NeueHaasGrotesk-Bold.woff") format ("woff");
-    font-weight: bold; 
+    font-weight: bold;
     font-style: bold;
 }
 
-body {
-    font-family: neuebold;
+/****************************************
+*    Variables
+*****************************************/
+:root {
+  /* Colors */
+  --background: #ffffff;
+  --primary: #000000;
+  --hover: #1985dd;
+  /* Typography */
+  --font-family: "neueregular";
 }
 
+/* Resets */
+html{box-sizing:border-box}*,::after,::before{box-sizing:inherit}blockquote,body,figure,h1,h2,h3,h4,h5,h6,hr,li,ol,pre,ul{margin:0;padding:0}ul{list-style:none}button,input,select,textarea{color:inherit;font:inherit;letter-spacing:inherit}button,input,textarea{border:1px solid gray}button{border-radius:0;padding:.75em 1em;background-color:transparent}button *{pointer-events:none}embed,iframe,img,object,video{display:block;max-width:100%}table{table-layout:fixed;width:100%}[hidden]{display:none}noscript{display:block;margin-bottom:1em;margin-top:1em}
 
-/* CSS Resets */
+
+/****************************************
+*    Base - Elements
+*****************************************/
 html {
-    box-sizing: border-box;
-  }
-  
-  *,
-  *::before,
-  *::after {
-    box-sizing: inherit;
-  }
-  
-  body,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  ul,
-  ol,
-  li,
-  pre,
-  blockquote,
-  figure,
-  hr {
-    margin: 0;
-    padding: 0;
-  }
-  
-  /* No discs from ul */
-  ul {
-    list-style: none;
-  }
-  
-  input,
-  textarea,
-  select,
-  button {
-    color: inherit;
-    font: inherit;
-    letter-spacing: inherit;
-  }
-  
-  input,
-  textarea,
-  button {
-    border: 1px solid gray;
-  }
-  
-  button {
-    border-radius: 0;
-    padding: 0.75em 1em;
-    background-color: transparent;
-  }
-  
-  button * {
-    pointer-events: none;
-  }
-  
-  embed,
-  iframe,
-  img,
-  object,
-  video {
-    display: block;
-    max-width: 100%;
-  }
-  
-  table {
-    table-layout: fixed;
-    width: 100%;
-  }
-  
-  [hidden] {
-    display: none;
-  }
-  
-  /* noscript styles */
-  noscript {
-    display: block;
-    margin-bottom: 1em;
-    margin-top: 1em;
-  }
-  
-  /* Variables */
-  :root {
-    /* Containers */
-    --small: 768px;
-    --medium: 1024px;
-    --large: 1440px;
-    /* Colors */
-    --background: white;
-    --primary-color: #0366EE;
-    --secondary-color: #FCB42A;
-    /* Typography */
-    --font-size: 1rem;
-    --body-font-size: 1rem;
-    --font-style: normal;
-    --font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, sans-serif;
-    /* Components - Heading */
-    --heading-font-color: #404040;
-    --heading-font-weight: bold;
-    --heading-font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, sans-serif;
-    /* Components -Heading font size */
-    --h1: 2.25rem;
-    --h2: 2rem;
-    --h3: 1.75rem;
-    --h4: 1.5rem;
-    /* Components - Footer */
-    --footer-font-color: #F4F4F4;
-    --footer-bg-color: #000000;
-    /* Padding */
-    --padding: 1rem;
-    --margins: 1.5rem;
-  }
-  
-  /* Global */
-  body {
-    font-family: var(--font-family);
-  }
-   
-  /* Sections */
-  
-  /* Layouts */
-
-  ul{
-    display: flex;
-    flex-direction: column;
-  }
-
-  .proyectos {
-    padding: 16px;
-  }
-
-  .lietzadevillers {
-border: 2px solid pink;
-  }
-
-  
-  .child {
-    text-align: center;
-    font-size: 20px;
-    color: black;
-    flex: 1 1 auto; 
-  }
-  .parent {
-    padding-top: 20px;
-    display: flex;
-    flex-direction: row-reverse;
-  }
-  
-.child:nth-child(3) {
-  padding-left: 20px;
-  border: 3px;
-  flex: 2 2 auto;
-  text-align:left;
-
+  height: 100%;
 }
 
-.nav{
+body {
+  color: var(--primary);
+  background: var(--background);
+  font-family: var(--font-family);
+  font-size: 100%;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--hover);
+}
+
+/* Tipografía */
+p {
+  font-size: 1em;
+}
+
+h1 {
+  font-size: 2em;
+  line-height: 1.25;
+}
+
+h2 {
+  font-size: 1.6em;
+  line-height: 1.2;
+}
+
+h3 {
+  font-size: 1.4em;
+  line-height: 1.15;
+}
+
+h4 {
+  font-size: 1.2em;
+  line-height: 1;
+}
+
+/* Tipografía responsiva */
+/* https://css-tricks.com/snippets/css/fluid-typography */
+body {
+  font-size: calc(16px + (20 - 16) * ((100vw - 720px) / (1400 - 720)));
+}
+
+/****************************************
+*    Componentes
+*****************************************/
+
+/* Nav */
+.nav {
   font-family: "neueregular";
   padding-top: 20px;
   display: flex;
   flex-direction: row-reverse;
-
-}.nav a{
+}
+.nav a {
   font-family: "neueregular";
   text-align: center;
-    font-size: 20px;
-    color: black;
-    flex: 1 1 auto; 
+  font-size: 20px;
+  color: black;
+  flex: 1 1 auto;
 }
 
-.bio p{
-font-family: "neueregular";
-font-style: normal;
-font-weight: bold;
-font-size: 20px;
-line-height: 119.3%;
-}
-
-.proyectos{
-  padding: 20px;
-  font-size: 8px;
-  font-family: Arial, Helvetica, sans-serif;
-
-}
-
-.main{
+/* Main */
+.main {
   display: grid;
-  grid-template-columns: repeat(8, 1 fr);
-  grid-template-areas: 
+  grid-template-columns: 1fr 3fr 2fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "about proyectos imagenes-proyectos";
+  justify-items: center;
+  padding-top: 40px;
+}
 
+/* Proyectos */
+
+.about {
+  grid-area: about;
+  padding-left: 2em;
+}
+
+.proyectos {
+  grid-area: proyectos;
+}
+
+.imagenes-proyectos {
+  grid-area: imagenes-proyectos;
 }
