@@ -104,10 +104,6 @@ body {
   color: black;
 }
 
-.nav a:not(:first-child) {
-  display: none;
-}
-
 .main {
   display: grid;
   grid-template-columns: 1fr;
@@ -262,15 +258,54 @@ body {
 }
 
 /****************************************
-*    Helpers
+*    Proyecto Individual 
 *****************************************/
-.centrar {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.proyecto-individual {
+  max-width: 90vw;
+  margin: 0 auto;
 }
 
-/* Ayuda visual temporal */
-.outline {
-  border: 2px dotted blue;
+.proyecto-nombre {
+  margin: 1em 0;
+}
+
+.proyecto-descripcion {
+  width: 90%;
+  line-height: 1.4;
+}
+
+.proyecto-individual img {
+  display: block;
+  max-width: 100%;
+  margin: 1em 0;
+}
+
+@media screen and (min-width: 40em) {
+  .proyecto-individual {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-column-gap: 1em;
+    grid-template-rows: 1fr;
+  }
+
+  .proyecto-individual div:nth-child(1) {
+    width: 680px;
+    margin: 0 0 0 auto;
+    padding-right: 2em;
+  }
+
+  .proyecto-nombre {
+    margin: 1em 0;
+  }
+
+  .proyecto-descripcion {
+    max-width: 500px;
+    line-height: 1.4;
+  }
+}
+
+@media screen and (max-width: 40em) {
+  .nav a:not(:first-child) {
+    display: none;
+  }
 }
