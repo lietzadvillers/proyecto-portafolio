@@ -165,6 +165,14 @@ body {
   padding-top: 1.3em;
 }
 
+.card a {
+  color: black;
+}
+
+.card a:hover {
+  color: blue;
+}
+
 .footer {
   padding: 3em;
   padding-left: 20px;
@@ -193,7 +201,7 @@ body {
     font-size: 20px;
     color: black;
     flex: 1 1 auto;
-    padding: 2em;
+    padding: 0;
   }
 
   .nav a:first-child {
@@ -220,6 +228,10 @@ body {
     font-weight: 500;
     padding-top: 1em;
     padding-left: 2em;
+  }
+
+  .about::after {
+    display: none;
   }
 
   .card-container {
@@ -254,6 +266,21 @@ body {
 
   .card li:nth-child(1) {
     padding-top: 1.3em;
+  }
+
+  .card-wrapper {
+    position: relative;
+  }
+
+  .link-img {
+    width: 360px;
+    height: 290px;
+    position: absolute;
+    transform: translate(350px, -120px);
+  }
+
+  .footer {
+    display: none;
   }
 }
 
